@@ -1,0 +1,25 @@
+<div>
+    <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="2"
+        [imageSize]="{width: '100%', height:700}" slideImage="1"></ng-image-slider>
+</div>
+
+
+<div id="tabla-precios">
+
+        <div class="precio-col" *ngFor="let noticia of recientes">
+            <div class="precio-col-header">
+                <h3>{{noticia.titulo}}</h3>
+            </div>
+
+            <div class="precio-col-features">
+                <p>{{noticia.cuerpo}}</p>
+            </div>
+
+            <div class="precio-col-comprar">
+                <a [routerLink]="'/noticia'">Leer mas...</a>
+            </div>
+        </div>
+
+        
+    
+</div>

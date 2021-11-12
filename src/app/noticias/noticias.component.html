@@ -1,0 +1,66 @@
+<h1 tabindex="0">Noticias Administrador</h1>
+<div class="izquierda">
+    <h3 tabindex="0">Crear Noticias</h3>
+    <nb-form-field>
+        <form #noticiaForm="ngForm" (ngSubmit)="addNoticia(noticiaForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="noticiaService.selectedNoticia._id">
+            <input type="hidden" name="fecha" #fecha="ngModel" [(ngModel)]="noticiaService.selectedNoticia.fecha">
+            <div>
+                <input type="text" name="titulo" #titulo="ngModel" [(ngModel)]="noticiaService.selectedNoticia.titulo"
+                    placeholder="Ingresa el titulo" nbInput status="info">
+            </div>
+            <div>
+                <textarea type="text" name="cuerpo" #cuerpo="ngModel"
+                    [(ngModel)]="noticiaService.selectedNoticia.cuerpo" placeholder="Ingresa el cuerpo de la noticia"
+                    nbInput status="info"></textarea>
+            </div>
+            <div>
+                <input type="text" name="link" #cuerpo="ngModel" [(ngModel)]="noticiaService.selectedNoticia.link"
+                    placeholder="Ingresa el link de la noticia" nbInput status="info">
+            </div>
+            <div>
+                <button nbButton outline status="info">
+                    <nb-icon icon="save"></nb-icon>GUARDAR
+                </button>
+                <button nbButton outline status="info" (click)="resetForm(noticiaForm)">LIMPIAR<nb-icon icon="trash-2">
+                    </nb-icon></button>
+            </div>
+        </form>
+    </nb-form-field>
+</div>
+<div class="derecha">
+    <h3>Listado de Noticias</h3>
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Cuerpo</th>
+                <th>Link</th>
+                <th>Fecha</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let noticia of data">
+                <td tabindex="0">
+                    {{noticia.titulo}}
+                </td>
+                <td tabindex="0">
+                    {{noticia.cuerpo}}
+                </td>
+                <td tabindex="0">
+                    {{noticia.link}}
+                </td>
+                <td tabindex="0">
+                    {{noticia.fecha | date:'dd-MM-yyyy'}}
+                </td>
+                <td>
+                    <button tabindex="0" (click)="actualizarNoticia(noticia)"
+                        (keyup.enter)="actualizarNoticia(noticia)">
+                        <nb-icon icon="edit-outline"></nb-icon>Editar la noticia
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

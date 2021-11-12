@@ -1,0 +1,41 @@
+td {
+    padding-right: 2em;
+}
+
+.reserva{
+    float: right;
+}
+
+.r {
+    float: left;
+}
+
+.cantidad{
+    width: 50%;
+    text-align: center;
+}
+
+.reservasimagen{
+    padding-top: 1%;
+    float: right;
+    width: 50%;
+}
+
+nb-card {
+    width: 100%;
+  }
+
+::ng-deep  .fc-scroller-liquid-absolute {
+    position: unset !important;
+    height: 100% !important;
+}
+
+::ng-deep .fc-view {
+    // height: 100% !important;
+    position: unset !important;
+}
+
+::ng-deep .fc-view-harness {
+    position: unset !important;
+    height: unset !important;
+}

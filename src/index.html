@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+    <meta charset="utf-8">
+    <title>Complejo Arqueológico de Ingapirca</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/assets/Fluid-UI/src/framework/core/css/fluid.css" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/Fluid-UI/src/framework/preferences/css/Enactors.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/Fluid-UI/src/framework/preferences/css/PrefsEditor.css" />
+    <link rel="stylesheet" type="text/css"
+        href="/assets/Fluid-UI/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" />
+
+    <script type="text/javascript" src="/assets/Fluid-UI/src/lib/jquery/core/js/jquery.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/lib/jquery/ui/js/version.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/lib/jquery/ui/js/widget.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/lib/jquery/ui/js/position.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/lib/jquery/ui/js/keycode.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/lib/jquery/ui/js/unique-id.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/lib/jquery/ui/js/tooltip.js"></script>
+
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/FluidDocument.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/jquery.keyboard-a11y.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/Fluid.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/FluidPromises.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/DataSource.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/FluidRequests.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/FluidDOMUtilities.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/FluidIoC.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/DataBinding.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/RemoteModel.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/ModelTransformation.js"></script>
+    <script type="text/javascript"
+        src="/assets/Fluid-UI/src/framework/core/js/ModelTransformationTransforms.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/FluidView.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/ResourceLoader.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/lib/fastXmlPull/js/fastXmlPull.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/renderer/js/fluidParser.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/core/js/MessageResolver.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/renderer/js/fluidRenderer.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/renderer/js/RendererUtilities.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/enhancement/js/ContextAwareness.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/enhancement/js/ProgressiveEnhancement.js"></script>
+
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/Store.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/components/textfieldControl/js/Textfield.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/components/textfieldControl/js/TextfieldStepper.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/ArrowScrolling.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/UIEnhancer.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/PrefsEditor.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/Panels.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/Enactors.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/SeparatedPanelPrefsEditor.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/components/slidingPanel/js/SlidingPanel.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/components/switch/js/Switch.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/components/tableOfContents/js/TableOfContents.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/PrimaryBuilder.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/AuxBuilder.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/StarterSchemas.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/framework/preferences/js/Builder.js"></script>
+    <script type="text/javascript" src="/assets/Fluid-UI/src/components/uiOptions/js/UIOptions.js"></script>
+
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        $(function () {
+            fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
+                lazyLoad: true,
+                terms: {
+                    "templatePrefix": "/assets/Fluid-UI/src/framework/preferences/html",
+                    "messagePrefix": "/assets/Fluid-UI/src/framework/preferences/messages"
+                },
+                "tocTemplate": "/assets/Fluid-UI/src/components/tableOfContents/html/TableOfContents.html",
+                "tocMessage": "/assets/Fluid-UI/src/framework/preferences/messages/tableOfContents-enactor.json",
+            });
+        });
+    </script>
+
+    <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+
+        <div class="fl-panelBar fl-panelBar-smallScreen">
+            <span class="fl-prefsEditor-buttons">
+                <button class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Ver/Ocultar</button>
+                <button class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span>
+                    Reiniciar</button>
+            </span>
+        </div>
+
+
+        <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+
+        <div class="fl-panelBar fl-panelBar-wideScreen">
+            <span class="fl-prefsEditor-buttons">
+                <button class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Ver/Ocultar</button>
+                <button class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span>
+                    Reiniciar</button>
+            </span>
+        </div>
+    </div>
+    
+</body>
+<app-root></app-root>
+</html>

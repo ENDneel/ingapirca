@@ -1,0 +1,27 @@
+<div class="container" style = "float: left">
+    <div class="row">
+        <div class="col s5">
+            <div class="card">
+                <div class="card content">
+                    <form #noticiaForm="ngForm" (ngSubmit)="addNoticia(noticiaForm)">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="titulo" #titulo="ngModel" [(ngModel)]="noticiaService.selectedNoticia.titulo" placeholder="Ingresa el titulo">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="cuerpo" #cuerpo="ngModel" [(ngModel)]="noticiaService.selectedNoticia.cuerpo" placeholder="Ingresa el cuerpo de la noticia">
+                            </div>
+                            <div class="card-action">  
+                                <div clas="input-field col s12">
+                                    <button class="btn right">GUARDAR</button>
+                                    <button class="btn right" (click)="resetForm(noticiaForm)">LIMPIAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>

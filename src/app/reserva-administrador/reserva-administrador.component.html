@@ -1,0 +1,125 @@
+<div>
+	<h2 tabindex="0" style="text-align: center;">Bienvenido | Control de Reservas</h2>
+	<hr>
+</div>
+<div *ngIf="mostrarPagina">
+	<div>
+		<div>
+			<h3 tabindex="0">Horarios de atención</h3>
+			<p>
+				<label id="Hora de inicio de jornada" for="Hora de inicio" tabindex="0">Hora de inicio de jornada:
+					<input type="time" [(ngModel)]="inputHoraInicioStr" #horaInicio nbInput>
+				</label>
+			</p>
+			<!-- 			
+		<input [nbTimepicker]="horaInicio" [(ngModel)]="inputHoraInicio" type="text" nbInput>
+			<nb-timepicker #horaInicio></nb-timepicker>
+		</p>
+		 -->
+			<p>
+				<label id="Hora de fin de jornada" for="Hora de fin de jornada" tabindex="0">Hora de fin de jornada:
+					<input type="time" [(ngModel)]="inputHoraFinStr" nbInput #horaFin>
+				</label>
+			</p>
+			<!-- <input [nbTimepicker]="horaFin" type="text" [(ngModel)]="inputHoraFin" nbInput>
+			<nb-timepicker #horaFin></nb-timepicker>
+		</p> -->
+		<p>
+			<label id="Intervalo de tiempo" for="Intervalo de tiempo" tabindex="0">Intervalo de tiempo: <input
+					id="intervalo" type="number" [(ngModel)]="intervaloTiempo" name="intervalo" nbInput>
+			</label>
+		</p>
+		<p>
+			<label id="Cantidad de reservas" for="Cantidad de reservas" tabindex="0">Cantidad de reservas:
+				<input id="cantidad" type="number" [(ngModel)]="cantidad" name="cantidad" nbInput>
+			</label>
+		</p>
+		</div>
+		<div>
+			<button nbButton outline status="info" [disabled]="btnGuardar"  (click)="generarHorarios()">
+				<nb-icon icon="save"></nb-icon>GENERAR HORARIOS
+			</button>
+		</div>
+		<div>
+			<li class="horariosAtencion" *ngFor="let horario of horarios">
+				<nb-checkbox status="basic" [(checked)]="horario.marcado">{{horario.horario}}</nb-checkbox>
+			</li>
+		</div>
+	</div>
+
+	<div style="padding-top: 3%;">
+		<div>
+			<h3 tabindex="0">Dias de atencion</h3>
+		</div>
+		<div style="width:50%; background-color: white;">
+			<full-calendar #calendar [options]="calendarOptions">
+			</full-calendar>
+		</div>
+		<br>
+		<br>
+		<!-- 	<div> -->
+		<!-- 		<button (click)="agregarDias()">Asignar dias de atencion</button> -->
+		<!-- 	</div> -->
+
+		<div>
+			<button nbButton outline status="info" [disabled]="btnGuardar" (click)="agregarReserva()">
+				<nb-icon icon="save"></nb-icon>GUARDAR
+			</button>
+		</div>
+	</div>
+
+
+
+	<div>
+		<h3 tabindex="0">Listado de las Reservas</h3>
+		<nb-card>
+			<nb-card-body>
+				<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+					<thead class="mitad">
+						<tr>
+							<th style="display:none;">ID</th>
+							<th>Nombre</th>
+							<th>Telefono</th>
+							<th>Cantidad</th>
+							<th>Fecha de Reserva</th>
+							<th>Horario</th>
+							<th>Fecha de creacion</th>
+							<th>Confirmar</th>
+						</tr>
+					</thead>
+					<tbody class="mitad">
+						<tr *ngFor="let reserva of data">
+							<td style="display:none;">
+								{{reserva._id}}
+							</td>
+							<td tabindex="0">
+								{{reserva.nombre}}
+							</td>
+							<td tabindex="0">
+								{{reserva.telefono}}
+							</td>
+							<td tabindex="0">
+								{{reserva.cantidad}}
+							</td>
+							<td tabindex="0">
+								{{reserva.fecha | date:'dd-MM-yyyy'}}
+							</td>
+							<td tabindex="0">
+								{{reserva.horario}}
+							</td>
+							<td tabindex="0">
+								{{reserva.fechaCreacion | date:'dd-MM-yyyy'}}
+							</td>
+							<td>
+								<button  tabindex="0" (click)="actualizarReserva(reserva)"
+									(keyup.enter)="actualizarReserva(reserva)">
+									<nb-icon icon="save"></nb-icon>Confirmar la reserva
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</nb-card-body>
+		</nb-card>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<nb-layout-footer>
+    <h1>
+        Noticias
+    </h1>
+</nb-layout-footer>
+<div>
+
+    <div class="izquierdo" style="width:40%;">
+        <img class="intir" src="/assets/img/Intiraymi/IMG_4394.jpg" alt="intiraymi" style="width: 60%;">
+    </div>
+    
+    <nb-card accent="info" *ngFor="let n of noticias" style="width: 50%;">
+        <nb-card-header class="centro">{{n.titulo}}</nb-card-header>
+        <nb-card-body class="justificado">
+            {{n.cuerpo}}
+        </nb-card-body>
+        <nb-card-footer class="pie">
+            Fuente: <a>{{n.link}}</a>
+            <br>
+            Fecha Publicacion: {{n.fecha}}
+        </nb-card-footer>
+    </nb-card>
+</div>

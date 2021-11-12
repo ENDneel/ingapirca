@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+ 
+</head>
+<nb-layout>
+  <nb-layout-header style="padding-top: 2em; padding-left: 6.5em;">
+    <nb-card>
+      <nb-card-body class="example-items-col">
+        <nb-button-group status="basic" size="large" *ngIf="adminService.esAdministrador">
+          <button nbButton><a [routerLink]="'/reservaAdministrador'">Reserva Administrador</a></button>
+          <button nbButton><a [routerLink]="'/noticias'">Noticias Administrador</a></button>
+          <button nbButton><a [routerLink]="'/capac'">Cambiar Contrasena</a></button>
+          <button (click)="loggout()" nbButtonToggle><a>Salir</a></button>
+        </nb-button-group>
+
+        <nb-button-group status="basic" size="large" *ngIf="!adminService.esAdministrador">
+          <button nbButton><a [routerLink]="'/'">Inicio</a></button>
+          <button nbButton><a [routerLink]="'/recorrido'">Tour 360</a></button>
+          <button nbButton><a [routerLink]="'/historia'">Historia</a></button>
+          <button nbButton><a [routerLink]="'/noticia'">Noticias</a></button>
+          <button nbButton><a [routerLink]="'/reserva'">Reservas</a></button>
+          <button nbButton><a [routerLink]="'/list'">Juego</a></button>
+          <button nbButton><a [routerLink]="'/intiraymi'">IntiRaymi</a></button>
+          <button nbButton><a [routerLink]="'/capac'">Qhapaq Ñan</a></button>
+        </nb-button-group>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-header>
+  <nb-layout-column>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </nb-layout-column>
+
+
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+    <img src="/assets/img/footer.PNG" alt="Numeros telefonicos y direccion para contactarse con el complejo 22230080"
+      style="width: 100%">
+  </nb-layout-footer>
+</nb-layout>
+
+</html>

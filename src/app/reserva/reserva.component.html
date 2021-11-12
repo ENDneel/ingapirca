@@ -1,0 +1,75 @@
+<div>
+	<h2 tabindex="0">RESERVAS</h2>
+</div>
+<div>
+	<img tabindex="0" class="reservasimagen" src="/assets/img/Reservas/IMG_4486.jpg" alt="llama en el cesped" >
+</div>
+<div style="width:45%; background-color: white;">
+	<full-calendar tabindex="0" #calendar [options]="calendarOptions">
+	</full-calendar>
+
+	
+</div>
+
+<div class="r" *ngIf="mostrarHorariosFecha">
+	<div>
+		<h4 tabindex="0">Horarios disponibles para {{fechaSeleccionada}}</h4>
+		<!--      Recorrer listado   -->
+		<table>
+			<tr>
+				<th>Horarios</th>
+				<th>Disponibles</th>
+				<th>Cantidad a Reservar</th>
+			</tr>
+			<tr *ngFor="let ho of horarios">
+				<td>
+					<nb-checkbox status="basic" [(checked)]="ho.marcado" (checkedChange)="toggleReserva(ho, $event)">{{ho.horario}} </nb-checkbox>
+				</td>
+				<td><label id="disponibles" for="disponibles" tabindex="0">{{ho.disponibles}} / {{ho.cantidad}}</label></td>
+				<td>
+					<input class="cantidad" id="nombre" type="number" min="1" max="ho.disponible" [(ngModel)]="ho.cantidadReservada"
+						name="cantidadReservada" nbInput>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<div>
+		<p>Nombre: <input id="nombre" type="string" [(ngModel)]="inputNombre" name="inputNombre" placeholder="Ingrese su nombre" nbInput>
+		</p>
+		<p>Telefono de contacto: <input id="inputTelefonoContacto" type="string" [(ngModel)]="inputTelefonoContacto"
+				name="inputTelefonoContacto" placeholder="Ingrese un numero de contacto" nbInput>
+		</p>
+	</div>
+	<br>
+	<div>
+		<button (click)="generarReserva()" nbButton outline status="info"><nb-icon icon="save"></nb-icon>RESERVAR</button>
+	</div>
+</div>
+
+<div *ngIf="mostrarReserva">
+	<nb-card status="success" style="width: 40%;">
+		<nb-card-header> <label id="disponibles" for="disponibles" tabindex="0">Hola, {{reservaService.selectedReserva.nombre}} ! </label></nb-card-header>
+		<nb-card-body>
+			<label id="disponibles" for="disponibles" tabindex="0">
+			Tu cita fue agendada para el:
+			<br>
+			{{fechaAsignada}}
+			<br><br>
+			El horario es:
+			<br>
+			{{reservaService.selectedReserva.horario}}
+			<br><br>
+			La cantidad de cupos son:
+			<br>
+			{{reservaService.selectedReserva.cantidad}}
+			<br>
+			<hr>
+			Recuerda llegar 10minutos antes
+		</label>
+		</nb-card-body>
+		<nb-card-footer>
+			<button (click)="recargar()" nbButton outline status="info"><nb-icon icon="save"></nb-icon>ACEPTAR</button>
+		</nb-card-footer>
+	</nb-card>
+</div>
